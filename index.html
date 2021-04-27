@@ -41,55 +41,13 @@
 
         <h1 class="uk-heading-large uk-text-center">Mods</h1>
 
-        <div class="uk-card uk-card-small uk-card-default uk-card-hover">
-            <div class="uk-card-media-top uk-inline" style="max-height: 443px; overflow: hidden;">
-                <video src="assets/videos/carryon.webm" width="900" height="443gem
-                " loop muted playsinline uk-video="autoplay: inview"></video>
-                <div class="uk-overlay uk-position-cover">
-                    <img data-src="assets/images/carryOn.png" alt="Carry On" width="100" height="100" uk-img
-                        class="uk-position-top-right uk-padding-small" style="height : 11vh; width : 11vh">
-                </div>
-            </div>
-
-            <div class="uk-padding">
-                <div class="uk-child-width-1-2" uk-grid>
-
-                    <div class="uk-heading-small">Carry On</div>
-                    <div class="uk-flex">
-                        <div class="uk-padding-remove">
-                            <span class="uk-label uk-label-success" title="Supported" uk-tooltip>1.16.5</span>
-                            <span class="uk-label uk-label-warning" title="Only critical bugfixes" uk-tooltip>1.15.2</span>
-                            <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>1.14.4</span>
-                            <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>1.13.2</span>
-                            <span class="uk-label uk-label-warning" title="Only critical bugfixes" uk-tooltip>1.12.2</span>
-                            <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>1.11.2</span>
-                            <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>1.10.2</span>
-                        </div>
-
-                    </div>
-                </div>
-                <hr>
-                <div class="uk-flex uk-flex-between">
-                    <div>Carry On allows the player to pick up blocks and entites with just their hands!</div>
-                    <a href="https://www.curseforge.com/minecraft/mc-mods/carry-on/files"><img data-src="assets/images/download.svg" width="30" height="30" uk-img  title="Download" uk-tooltip></img></a>
-                </div>
-                <hr>
-                <ul uk-accordion>
-                    <li>
-                        <a class="uk-accordion-title" href="#">Read more</a>
-                        <div class="uk-accordion-content">
-
-                            {% capture inc %}{% include carryon.md %}{% endcapture %}
-                            {{ inc | markdownify }}
-
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-
+        {%  include mod.html 
+            modid="carryon" modname="Carry On" slug="carry-on" 
+            desc="Carry On allows the player to pick up blocks and entites with just their hands!"
+            supported="1.16.5"
+            partial_support="1.15.2,1.12.2"
+            unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
+        %}
 
     </div>
     </div>
