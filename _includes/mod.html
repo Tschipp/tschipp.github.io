@@ -1,6 +1,6 @@
 <div class="uk-card uk-card-small uk-card-default uk-card-hover">
     <div class="uk-card-media-top uk-inline" style="max-height: 443px; overflow: hidden;">
-        <video src="assets/videos/{{ include.modid }}.webm" width="900" height="443" loop muted playsinline uk-video="autoplay: inview"></video>
+        <video src="assets/videos/{{ include.modid }}.mp4" width="900" height="443" loop muted playsinline uk-video="autoplay: inview"></video>
         <div class="uk-overlay uk-position-cover">
             <img data-src="assets/images/{{ include.modid }}.png" alt="{{ include.modname }}" width="100" height="100" uk-img
                 class="uk-position-top-right uk-padding-small" style="height : 11vh; width : 11vh">
@@ -8,36 +8,35 @@
     </div>
 
     <div class="uk-padding">
-        <div class="uk-child-width-1-2" uk-grid>
+        <div class="uk-flex uk-flex-between">
+            <div class="uk-heading-small uk-margin-small">{{ include.modname }}</div>
+                <div class="uk-text-right">
 
-            <div class="uk-heading-small">{{ include.modname }}</div>
-            <div class="uk-flex">
-                <div class="uk-padding-remove">
+                    <a href="https://www.curseforge.com/minecraft/mc-mods/{{ include.slug }}/files" target="_blank" title="Download" uk-tooltip uk-icon="icon: download; ratio: 2;"></a>
+                    <a href="{{ include.github }}" title="GitHub" target="_blank" uk-tooltip uk-icon="icon: github; ratio: 2;"></a>
 
-                    {% assign supp_arr = include.supported | split: ',' %}
-                    {% assign med_arr = include.partial_support | split: ',' %}
-                    {% assign unsup_arr = include.unsupported | split: ',' %}
-
-                    {% for s in supp_arr %}
-                    <span class="uk-label uk-label-success" title="Supported" uk-tooltip>{{s}}</span>
-                    {% endfor %}
-
-                    {% for s in med_arr %}
-                    <span class="uk-label uk-label-warning" title="Only critical bugfixes" uk-tooltip>{{s}}</span>
-                    {% endfor %}
-
-                    {% for s in unsup_arr %}
-                    <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>{{s}}</span>
-                    {% endfor %}
                 </div>
 
-            </div>
         </div>
+
+        {% assign supp_arr = include.supported | split: ',' %}
+        {% assign med_arr = include.partial_support | split: ',' %}
+        {% assign unsup_arr = include.unsupported | split: ',' %}
+
+        {% for s in supp_arr %}
+        <span class="uk-label uk-label-success" title="Supported" uk-tooltip>{{s}}</span>
+        {% endfor %}
+
+        {% for s in med_arr %}
+        <span class="uk-label uk-label-warning" title="Only critical bugfixes" uk-tooltip>{{s}}</span>
+        {% endfor %}
+
+        {% for s in unsup_arr %}
+        <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>{{s}}</span>
+        {% endfor %}
+
         <hr>
-        <div class="uk-flex uk-flex-between">
-            <div>{{ include.desc }}</div>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/{{ include.slug }}/files"><img data-src="assets/images/download.svg" width="30" height="30" uk-img  title="Download" uk-tooltip></img></a>
-        </div>
+        <div>{{ include.desc }}</div>
         <hr>
         <ul uk-accordion>
             <li>

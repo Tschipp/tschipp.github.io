@@ -22,34 +22,35 @@
 </head>
 
 <body>
-    <div uk-sticky>
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-center">
-                <ul class="uk-navbar-nav">
+        <div uk-sticky>
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-center">
+                    <ul class="uk-navbar-nav">
 
-                    <li class="uk-active"><a href="#">Top</a></li>
-                    <li><a href="#mods">Mods</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="https://razzleberri.es/">Marketplace</a></li>
+                        <li class="uk-active"><a href="#">Top</a></li>
+                        <li><a href="#mods">Mods</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
 
-                </ul>
-            </div>
-        </nav>
-    </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-    <div class="uk-container uk-container-small">
+        <div class="uk-container uk-container-small">
 
-        <h1 class="uk-heading-large uk-text-center">Mods</h1>
+            <h1 class="uk-heading-large uk-text-center">Mods</h1>
 
-        {%  include mod.html 
-            modid="carryon" modname="Carry On" slug="carry-on" 
+            {% include mod.html
+            modid="carryon" modname="Carry On" slug="carry-on"
+            github="https://github.com/Tschipp/CarryOn"
             desc="Carry On allows the player to pick up blocks and entites with just their hands!"
             supported="1.16.5"
             partial_support="1.15.2,1.12.2"
             unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
-        %}
+            %}
 
-    </div>
+        </div>
     </div>
 </body>
 
