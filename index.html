@@ -29,6 +29,7 @@
                 <ul class="uk-navbar-nav">
 
                     <li><a href="#" uk-scroll uk-totop></a></li>
+                    <li><a href="#about" uk-scroll offset="80">About</a></li>
                     <li><a uk-scroll offset="80" onclick="return false;">Mods</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -37,7 +38,6 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#about" uk-scroll offset="80">About</a></li>
                     <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
 
                 </ul>
@@ -46,29 +46,6 @@
     </div>
 
     <div class="uk-container uk-container-small">
-
-        <h1 id="mods" class="uk-heading-large uk-text-center">Mods</h1>
-
-        {% include mod.html
-        modid="carryon" modname="Carry On" slug="carry-on"
-        github="https://github.com/Tschipp/CarryOn"
-        desc="Carry On allows the player to pick up blocks and entites with just their hands!"
-        supported="1.16.5"
-        partial_support="1.15.2,1.12.2"
-        unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
-        wip=""
-        %}
-
-        {% include mod.html
-        modid="buildersbag" modname="Builder's Bag" slug="builders-bag"
-        github="https://github.com/Tschipp/BuildersBag"
-        desc="Builder's Bag greatly enhances survival building by offering tools such as autocrafting, block refill and
-        other things!"
-        supported="1.12.2"
-        partial_support=""
-        unsupported=""
-        wip="1.16.5"
-        %}
 
         <h1 id="about" class="uk-heading-large uk-text-center">About</h1>
         <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-margin">
@@ -93,7 +70,7 @@
             <div class="uk-hidden@s">
                 <div>
                     <img data-src="https://crafatar.com/renders/head/fdd172eddcb549ed93ae7847f6e88bef?overlay=true&scale=10"
-                        alt="Tschipp Skin" width="200" height="200" uk-img class="uk-align-center"
+                        alt="Tschipp Skin" width="200" height="200" uk-img class="uk-align-center uk-padding-large uk-padding-remove-bottom"
                         style="object-fit: contain;">
                 </div>
                 <div class="uk-padding">
@@ -107,6 +84,31 @@
                 </div>
             </div>
         </div>
+
+        <h1 id="mods" class="uk-heading-large uk-text-center">Mods</h1>
+
+        {% include mod.html
+        modid="carryon" modname="Carry On" slug="carry-on"
+        github="https://github.com/Tschipp/CarryOn"
+        desc="Carry On allows the player to pick up blocks and entites with just their hands!"
+        supported="1.16.5"
+        partial_support="1.15.2,1.12.2"
+        unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
+        wip=""
+        %}
+
+        {% include mod.html
+        modid="buildersbag" modname="Builder's Bag" slug="builders-bag"
+        github="https://github.com/Tschipp/BuildersBag"
+        desc="Builder's Bag greatly enhances survival building by offering tools such as autocrafting, block refill and
+        other things!"
+        supported="1.12.2"
+        partial_support=""
+        unsupported=""
+        wip="1.16.5"
+        %}
+
+        
 
         Thank you to <a href="https://crafatar.com">Crafatar</a> for providing avatars.
 
