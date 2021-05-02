@@ -9,7 +9,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Tschipp</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 
     <!-- UIkit CSS -->
@@ -19,6 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.20/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.20/dist/js/uikit-icons.min.js"></script>
 
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
 </head>
 
 <body>
@@ -27,9 +28,16 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
 
-                        <li class="uk-active"><a href="#">Top</a></li>
-                        <li><a href="#mods">Mods</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#" uk-scroll>Top</a></li>
+                        <li><a href="#mods" uk-scroll offset="80">Mods</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#carryon" uk-scroll offset="80">Carry On</a></li>
+                                    <li><a href="#buildersbag" uk-scroll offset="80">Builder's Bag</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#about" uk-scroll>About</a></li>
                         <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
 
                     </ul>
@@ -39,7 +47,7 @@
 
         <div class="uk-container uk-container-small">
 
-            <h1 class="uk-heading-large uk-text-center">Mods</h1>
+            <h1 id="mods" class="uk-heading-large uk-text-center">Mods</h1>
 
             {% include mod.html
                 modid="carryon" modname="Carry On" slug="carry-on"

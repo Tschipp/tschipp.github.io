@@ -18,4 +18,3 @@ class VersionTagSupported extends VersionTag {
 
 
 window.customElements.define("v-supported", VersionTagSupported);
-

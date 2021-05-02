@@ -1,6 +1,6 @@
 <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-margin">
     <div class="uk-card-media-top uk-inline" style="max-height: 443px; overflow: hidden;">
-        <video src="assets/videos/{{ include.modid }}.mp4" width="900" height="443" loop muted playsinline uk-video="autoplay: inview"></video>
+        <video id="{{ include.modid }}" src="assets/videos/{{ include.modid }}.mp4" width="900" height="443" loop muted playsinline uk-video="autoplay: inview"></video>
         <div class="uk-overlay uk-position-cover">
             <img data-src="assets/images/{{ include.modid }}.png" alt="{{ include.modname }}" width="100" height="100" uk-img
                 class="uk-position-top-right uk-padding-small" style="height : 11vh; width : 11vh">
@@ -44,7 +44,8 @@
                 <div class="uk-accordion-content">
 
                     {% capture inc %}{% include {{ include.modid }}.md %}{% endcapture %}
-                    {{ inc | markdownify }}
+                    {% capture mdified %}{{ inc | markdownify }}{% endcapture %}
+                    {{ mdified | replace : 'img src', 'img uk-img data-src'}}
 
                 </div>
             </li>
