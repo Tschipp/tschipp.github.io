@@ -188,7 +188,7 @@ Since bag upgrading preserves the contents of the bag, there is a custom Crafttw
 
 This type of recipe is needed because it preserves the contents of the bag that is used in its recipe.
 
-```
+```java
 /**
 
  * Adds a shaped bag upgrade recipe
@@ -209,7 +209,7 @@ mods.buildersbag.addBagUpgradeRecipeShapeless(String name, IItemStack output, II
 Alternatively, you can also use the recipe function that has been exposed, which can be used in many different recipe registration commands, like for example with recipe stages:
 
 
-```
+```java
 mods.recipestages.Recipes.addShaped("one", <buildersbag:builders_bag_tier_two>, [[<minecraft:stone>, <minecraft:iron_ingot>, <minecraft:stone>], [<ore:plankWood>, <buildersbag:builders_bag_tier_one>, <ore:plankWood>], []], mods.buildersbag.upgradeFunction);
 ```
 

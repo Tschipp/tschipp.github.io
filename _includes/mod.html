@@ -22,6 +22,7 @@
         {% assign supp_arr = include.supported | split: ',' %}
         {% assign med_arr = include.partial_support | split: ',' %}
         {% assign unsup_arr = include.unsupported | split: ',' %}
+        {% assign wip_arr = include.wip | split: ',' %}
 
         {% for s in supp_arr %}
         <span class="uk-label uk-label-success" title="Supported" uk-tooltip>{{s}}</span>
@@ -33,6 +34,10 @@
 
         {% for s in unsup_arr %}
         <span class="uk-label uk-label-danger" title="No longer supported" uk-tooltip>{{s}}</span>
+        {% endfor %}
+
+        {% for s in wip_arr %}
+        <span class="uk-label" title="Work in Progress" uk-tooltip>{{s}}</span>
         {% endfor %}
 
         <hr>

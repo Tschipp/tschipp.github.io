@@ -23,52 +23,95 @@
 </head>
 
 <body>
-        <div uk-sticky>
-            <nav class="uk-navbar-container" uk-navbar>
-                <div class="uk-navbar-center">
-                    <ul class="uk-navbar-nav">
+    <div uk-sticky>
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
 
-                        <li><a href="#" uk-scroll>Top</a></li>
-                        <li><a href="#mods" uk-scroll offset="80">Mods</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#carryon" uk-scroll offset="80">Carry On</a></li>
-                                    <li><a href="#buildersbag" uk-scroll offset="80">Builder's Bag</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#about" uk-scroll>About</a></li>
-                        <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
+                    <li><a href="#" uk-scroll uk-totop></a></li>
+                    <li><a uk-scroll offset="80" onclick="return false;">Mods</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#carryon" uk-scroll offset="80">Carry On</a></li>
+                                <li><a href="#buildersbag" uk-scroll offset="80">Builder's Bag</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#about" uk-scroll offset="80">About</a></li>
+                    <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
 
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-        <div class="uk-container uk-container-small">
-
-            <h1 id="mods" class="uk-heading-large uk-text-center">Mods</h1>
-
-            {% include mod.html
-                modid="carryon" modname="Carry On" slug="carry-on"
-                github="https://github.com/Tschipp/CarryOn"
-                desc="Carry On allows the player to pick up blocks and entites with just their hands!"
-                supported="1.16.5"
-                partial_support="1.15.2,1.12.2"
-                unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
-            %}
-
-            {% include mod.html
-                modid="buildersbag" modname="Builder's Bag" slug="builders-bag"
-                github="https://github.com/Tschipp/BuildersBag"
-                desc="Builder's Bag greatly enhances survival building by offering tools such as autocrafting, block refill and other things!"
-                supported="1.12.2"
-                partial_support=""
-                unsupported=""
-            %}
-
-        </div>
+                </ul>
+            </div>
+        </nav>
     </div>
+
+    <div class="uk-container uk-container-small">
+
+        <h1 id="mods" class="uk-heading-large uk-text-center">Mods</h1>
+
+        {% include mod.html
+        modid="carryon" modname="Carry On" slug="carry-on"
+        github="https://github.com/Tschipp/CarryOn"
+        desc="Carry On allows the player to pick up blocks and entites with just their hands!"
+        supported="1.16.5"
+        partial_support="1.15.2,1.12.2"
+        unsupported="1.14.4,1.13.2,1.11.2,1.10.2"
+        wip=""
+        %}
+
+        {% include mod.html
+        modid="buildersbag" modname="Builder's Bag" slug="builders-bag"
+        github="https://github.com/Tschipp/BuildersBag"
+        desc="Builder's Bag greatly enhances survival building by offering tools such as autocrafting, block refill and
+        other things!"
+        supported="1.12.2"
+        partial_support=""
+        unsupported=""
+        wip="1.16.5"
+        %}
+
+        <h1 id="about" class="uk-heading-large uk-text-center">About</h1>
+        <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-margin">
+            <div class="uk-grid-match" uk-grid>
+                <div class="uk-card-media-left uk-cover-container uk-width-1-4">
+                    <img data-src="https://crafatar.com/renders/body/fdd172eddcb549ed93ae7847f6e88bef?overlay=true&scale=10"
+                        alt="Tschipp Skin" width="200" height="451" uk-img class="uk-padding-small"
+                        style="object-fit: contain;">
+                </div>
+                <div class="uk-width-3-4">
+                    <div class="uk-card-body uk-margin">
+                        <h3>Hi!</h3>
+                        I'm Tschipp, I'm a Computer Science Student and I make mods in my free time! You might know me
+                        from CarryOn, Animania or any of my other projects! <br><br>
+                        I have been making mods since 2014, and use Eclipse to make them. I mainly use Forge, altough I
+                        did experiment with Fabric a while ago. <br>
+                        Most of my mods are Open Source, and you can find them on <a href="https://github.com/Tschipp"
+                            target="_blank">GitHub</a>.<br>
+                        I also work on a Marketplace Team called the <a href="https://razzleberri.es/"
+                            target="_blank">Razzleberries</a>.<br><br>
+                        If you want to support me and my work, feel free to <a
+                            href="https://www.paypal.com/donate/?cmd=_donations&business=mrtschipp@gmail.com&lc=US&item_name=Support+me+and+my+work&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted&Z3JncnB0="
+                            target="_blank">donate via Paypal</a>!
+                        I am also partnered with <a href="https://bisecthosting.com/Tschipp"
+                            target="_blank">BisectHosting</a>, so if you need a Server and
+                        want to support me at the same time, get one at BisectHosting and use code <b>Tschipp</b> at
+                        checkout for 25% off your first month!
+
+                        <a href="https://bisecthosting.com/Tschipp" target="_blank"><img
+                                data-src="https://i.imgur.com/CjVfpPC.png" alt="BisectHosting" width="200" height="10"
+                                uk-img class="uk-align-center"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        Thank you to <a href="https://crafatar.com">Crafatar</a> for providing avatars.
+
+    </div>
+
+    </div>
+
+
 </body>
 
 </html>
