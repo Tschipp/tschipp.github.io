@@ -30,13 +30,13 @@
 
                     <li><a href="#" uk-scroll uk-totop></a></li>
                     <li><a href="#about" uk-scroll offset="80">About</a></li>
-                    <li><a uk-scroll offset="80" onclick="return false;">Mods</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#carryon" uk-scroll offset="80">Carry On</a></li>
-                                <li><a href="#buildersbag" uk-scroll offset="80">Builder's Bag</a></li>
-                            </ul>
-                        </div>
+                    <li class="uk-hidden-touch">
+                        <a uk-scroll offset="80" href="#mods">Mods</a>
+                        {% include mods_dropdown.html %}
+                    </li>
+                    <li class="uk-hidden-notouch">
+                        <a uk-scroll offset="80" onclick="return false;">Mods</a>
+                        {% include mods_dropdown.html %}
                     </li>
                     <li><a href="https://razzleberri.es/" target="_blank">Marketplace</a></li>
 
