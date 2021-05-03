@@ -208,22 +208,15 @@ mods.buildersbag.addBagUpgradeRecipeShapeless(String name, IItemStack output, II
 
 Alternatively, you can also use the recipe function that has been exposed, which can be used in many different recipe registration commands, like for example with recipe stages:
 
-
 ```java
 mods.recipestages.Recipes.addShaped("one", <buildersbag:builders_bag_tier_two>, [[<minecraft:stone>, <minecraft:iron_ingot>, <minecraft:stone>], [<ore:plankWood>, <buildersbag:builders_bag_tier_one>, <ore:plankWood>], []], mods.buildersbag.upgradeFunction);
 ```
 
 The function is accessed with: `mods.buildersbag.upgradeFunction`
 
- 
-
 **Crafting Recipes:**
 
 ![img](https://i.imgur.com/zL4Kv2e.png)
-
- 
-
- 
 
 **Everything Together!**
 The best thing about the bag is, that the modules communicate with each other to create what blocks you need. This means
@@ -235,14 +228,9 @@ smelt blocks as they're needed.
 Here are a few fun gifs that show everything together:
 ![img](https://i.imgur.com/0sST2NM.gif)
 
- 
-
 ![img](https://i.imgur.com/uTlrfyT.gif)
 
- 
-
 ![img](https://i.imgur.com/4a1MVGd.gif)
-
 
 ![img](https://i.imgur.com/H3k1XUo.gif) 
 

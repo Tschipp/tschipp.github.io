@@ -34,5 +34,3 @@ Carry On is a simple mod that improves game interaction by allowing players to p
 - The config can be accessed through an easy to use Config GUI from the Main Menu, and changes are recorded real-time
 - Specific blocks or entire mods can be blacklisted
 - An option to carry standard blocks (e.g., Dirt) can be enabled (Default = Off)
-
-[Curseforge Download](https://www.curseforge.com/minecraft/mc-mods/carry-on)
