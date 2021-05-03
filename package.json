@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "uikit": "^3.6.20"
+  },
+  "scripts": {
+    "install": "cd node_modules/uikit && yarn install && yarn compile && cd .. && cd .. && gulp styles && jekyll serve --watch"
+  },
+  "devDependencies": {}
+}
