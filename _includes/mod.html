@@ -57,7 +57,7 @@
                     {% capture mdified %}{{ inc | markdownify }}{% endcapture %}
                     {{ mdified | replace : 'img src', 'img uk-img data-src'}}
 
-                    <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%" style="border: none;"></iframe>
+                    <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%" style="border: none;" class="uk-visible@s"></iframe>
                 </div>
             </li>
         </ul>
