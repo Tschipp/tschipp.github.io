@@ -7,8 +7,8 @@ $global-link-color: #DA7D02;
 @import "variables-theme.scss";
 @import "mixins-theme.scss";
 
-// 3. Your custom mixin overwrites.
-@mixin hook-card() { color: #000; }
+// // 3. Your custom mixin overwrites.
+// @mixin hook-card() { color: #000; }
 
 // 4. Import UIkit.
 @import "uikit-theme.scss";
