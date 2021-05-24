@@ -66,8 +66,9 @@
                     {% capture mdified %}{{ inc | markdownify }}{% endcapture %}
                     {{ mdified | replace : 'img src', 'img class="uk-align-center uk-border-rounded" uk-img data-src'}}
 
-                    <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%"
-                        style="border: none; width: 100%;" class="uk-visible@s"></iframe>
+                    <!-- <iframe uk-scrollspy="repeat: false;" id="{{include.modid}}-widget"
+                        src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%"
+                        style="border: none; width: 100%;" class="uk-visible@s"></iframe> -->
 
                     <div class="uk-text-center">
                         <a id="{{ include.modid }}-scroll-trigger" href="#{{include.modid}}" uk-scroll offset=80
@@ -79,6 +80,16 @@
                         UIkit.util.on("#{{ include.modid }}-scroll-trigger", "scrolled", () => {
                             UIkit.accordion("#{{include.modid}}-accordion").toggle({ animate: true })
                         });
+
+                        // UIkit.util.on("#{{include.modid}}-widget", "inview", () => {
+                        //     var iframeCSS = document.createElement("link");
+                        //     iframeCSS.href = "assets/css/widget.css";
+                        //     iframeCSS.rel = "stylesheet";
+                        //     iframeCSS.type = "text/css";
+
+                        //     frames['#{{include.modid}}-widget'].document.head.appendChild(iframeCSS);
+                        // });
+
                     </script>
 
                 </div>
