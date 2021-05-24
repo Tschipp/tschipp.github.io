@@ -10,6 +10,7 @@ $navbar-background: #3C3C3C;
 $global-link-hover-color: #00fdfd;
 
 $navbar-nav-item-height: 50px;
+$border-rounded-border-radius: 20px;
 // 2. Import default variables and available mixins.
 @import "variables-theme.scss";
 @import "mixins-theme.scss";
