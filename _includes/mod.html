@@ -15,8 +15,10 @@
 
                 <a href="https://www.curseforge.com/minecraft/mc-mods/{{ include.slug }}/files" target="_blank"
                     title="Download" uk-tooltip uk-icon="icon: download; ratio: 2;"></a>
+                {% if include.github != "" %}
                 <a href="{{ include.github }}" title="GitHub" target="_blank" uk-tooltip
                     uk-icon="icon: github; ratio: 2;"></a>
+                {% endif %}
 
             </div>
 
@@ -48,16 +50,29 @@
         <hr>
         <div>{{ include.desc }}</div>
         <hr>
-        <ul uk-accordion>
+        <ul uk-accordion id="{{include.modid}}-accordion">
             <li>
                 <a class="uk-accordion-title" href="#">Read more</a>
-                <div class="uk-accordion-content">
+                <div class="uk-accordion-content" >
 
-                    {% capture inc %}{% include {{ include.modid }}.md %}{% endcapture %}
+                    {% capture inc %}{% include mods/{{ include.modid }}.md %}{% endcapture %}
                     {% capture mdified %}{{ inc | markdownify }}{% endcapture %}
-                    {{ mdified | replace : 'img src', 'img uk-img data-src'}}
+                    {{ mdified | replace : 'img src', 'img class="uk-align-center" uk-img data-src'}}
 
-                    <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%" style="border: none;" class="uk-visible@s"></iframe>
+                    <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%"
+                        style="border: none;" class="uk-visible@s"></iframe>
+
+                    <div class="uk-text-center" >
+                        <a id="{{ include.modid }}-scroll-trigger" href="#{{include.modid}}" uk-scroll offset=80 uk-icon="icon: close; ratio: 3">
+                        </a>
+                    </div>
+
+                    <script>
+                        UIkit.util.on("#{{ include.modid }}-scroll-trigger", "scrolled", () => {
+                            UIkit.accordion("#{{include.modid}}-accordion").toggle({animate:true})
+                        });
+                    </script>
+
                 </div>
             </li>
         </ul>
