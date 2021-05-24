@@ -60,7 +60,7 @@
                     {{ mdified | replace : 'img src', 'img class="uk-align-center" uk-img data-src'}}
 
                     <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%"
-                        style="border: none;" class="uk-visible@s"></iframe>
+                        style="border: none; width: 100%;" class="uk-visible@s"></iframe>
 
                     <div class="uk-text-center" >
                         <a id="{{ include.modid }}-scroll-trigger" href="#{{include.modid}}" uk-scroll offset=80 uk-icon="icon: close; ratio: 3">

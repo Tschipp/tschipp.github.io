@@ -53,7 +53,13 @@ Different Lights have Different Particles.
  
 Here is a Preview of some of the things you can do:
 
-<iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/xu5wzkkhWtA?wmode=transparent" height="358" width="638"></iframe> 
+<div style="position:relative; padding-bottom:56.25%;height : 0;">
+<iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/xu5wzkkhWtA?wmode=transparent" frameborder="0" height="100%" width="100%" style="position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;"></iframe>
+</div>
 
 For Crafting Recipes, I highly suggest you use JustEnoughItems (JEI)
  
