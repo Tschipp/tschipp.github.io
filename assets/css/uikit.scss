@@ -2,21 +2,47 @@
 ---
 
 $global-link-color: #dab202;
-$global-background: #1E1E1E;
+$global-background: #1e1e1e;
 $global-color: rgb(189, 189, 189);
 $global-emphasis-color: rgb(209, 209, 209);
 $card-default-background: #2b2b2c;
-$navbar-background: #3C3C3C;
+$navbar-background: #3c3c3c;
 $global-link-hover-color: #00fdfd;
+$global-border: #0a0a0a;
+$base-hr-border: $global-emphasis-color;
+$base-code-color: $global-link-hover-color;
+$global-muted-background: #3e3e3f;
 
 $navbar-nav-item-height: 50px;
-$border-rounded-border-radius: 20px;
+$border-rounded-border-radius: 18px;
 // 2. Import default variables and available mixins.
 @import "variables-theme.scss";
 @import "mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
-// @mixin hook-card() { color: #000; }
+// @mixin hook-base-code(){
+//     border-radius: 4px;
+// }
 
 // 4. Import UIkit.
 @import "uikit-theme.scss";
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #202324;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #454a4d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #51575a;
+}
+

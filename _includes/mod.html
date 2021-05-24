@@ -1,7 +1,7 @@
 <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-margin uk-border-rounded uk-overflow-hidden">
     <div class="uk-card-media-top uk-inline" style="max-height: 443px; overflow: hidden;">
         <video id="{{ include.modid }}" src="assets/videos/{{ include.modid }}.mp4" width="900" height="443" loop muted
-            playsinline uk-video="autoplay: inview"></video>
+            playsinline uk-video="autoplay: inview" class="uk-overflow-hidden"></video>
         <div class="uk-overlay uk-position-cover">
             <img data-src="assets/images/{{ include.modid }}.png" alt="{{ include.modname }}" width="100" height="100"
                 uk-img class="uk-position-top-right uk-padding-small" style="height : 11vh; width : 11vh">
@@ -10,7 +10,8 @@
 
     <div class="uk-padding">
         <div class="uk-flex uk-flex-between">
-            <div class="uk-heading-small uk-margin-small">{{ include.modname }}</div>
+            <div class="uk-heading-small uk-margin-small" id="{{include.modid}}-scrollspy" uk-scrollspy="repeat: true">
+                {{ include.modname }}</div>
             <div class="uk-text-right">
 
                 <a href="https://www.curseforge.com/minecraft/mc-mods/{{ include.slug }}/files" target="_blank"
@@ -21,6 +22,12 @@
                 {% endif %}
 
             </div>
+
+            <script>
+                UIkit.util.on("#{{ include.modid }}-scrollspy", "inview", () => {
+                    window.history.pushState("", "", '#{{ include.modid }}');
+                });
+            </script>
 
         </div>
 
@@ -53,23 +60,24 @@
         <ul uk-accordion id="{{include.modid}}-accordion">
             <li>
                 <a class="uk-accordion-title" href="#">Read more</a>
-                <div class="uk-accordion-content" >
+                <div class="uk-accordion-content">
 
                     {% capture inc %}{% include mods/{{ include.modid }}.md %}{% endcapture %}
                     {% capture mdified %}{{ inc | markdownify }}{% endcapture %}
-                    {{ mdified | replace : 'img src', 'img class="uk-align-center" uk-img data-src'}}
+                    {{ mdified | replace : 'img src', 'img class="uk-align-center uk-border-rounded" uk-img data-src'}}
 
                     <iframe src="https://www.cfwidget.com/minecraft/mc-mods/{{ include.slug }}" width="100%"
                         style="border: none; width: 100%;" class="uk-visible@s"></iframe>
 
-                    <div class="uk-text-center" >
-                        <a id="{{ include.modid }}-scroll-trigger" href="#{{include.modid}}" uk-scroll offset=80 uk-icon="icon: close; ratio: 3">
+                    <div class="uk-text-center">
+                        <a id="{{ include.modid }}-scroll-trigger" href="#{{include.modid}}" uk-scroll offset=80
+                            uk-icon="icon: close; ratio: 3">
                         </a>
                     </div>
 
                     <script>
                         UIkit.util.on("#{{ include.modid }}-scroll-trigger", "scrolled", () => {
-                            UIkit.accordion("#{{include.modid}}-accordion").toggle({animate:true})
+                            UIkit.accordion("#{{include.modid}}-accordion").toggle({ animate: true })
                         });
                     </script>
 
